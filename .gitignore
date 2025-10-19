@@ -1,37 +1,17 @@
-# Update .gitignore
 @"
 # Python
 __pycache__/
 *.py[cod]
 *.pyc
+.Python
 
 # Jupyter
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
-# LARGE MODEL FILES - DO NOT UPLOAD
-models/*.safetensors
-models/model.safetensors
-models/distilbert-model/*.safetensors
-*.bin
-*.pth
-*.pt
-
-# Large zip files
-*.zip
-output.zip
-
-# Keep small config files
-!models/*.json
-!models/*.txt
-!models/*.pkl
-!models/*.csv
-
-# Large data
+# Large data files
 data/complaints.csv
-data/*.zip
-
-# Allow sample data
-!data/first_1000_rows.csv
+data/*.parquet
 
 # IDE
 .vscode/
@@ -40,4 +20,7 @@ data/*.zip
 # OS
 .DS_Store
 Thumbs.db
+
+# Note: .safetensors files are tracked by Git LFS
+# See .gitattributes
 "@ | Out-File -FilePath .gitignore -Encoding utf8 -Force
