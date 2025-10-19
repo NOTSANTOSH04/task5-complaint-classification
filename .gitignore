@@ -1,0 +1,43 @@
+# Update .gitignore
+@"
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LARGE MODEL FILES - DO NOT UPLOAD
+models/*.safetensors
+models/model.safetensors
+models/distilbert-model/*.safetensors
+*.bin
+*.pth
+*.pt
+
+# Large zip files
+*.zip
+output.zip
+
+# Keep small config files
+!models/*.json
+!models/*.txt
+!models/*.pkl
+!models/*.csv
+
+# Large data
+data/complaints.csv
+data/*.zip
+
+# Allow sample data
+!data/first_1000_rows.csv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+"@ | Out-File -FilePath .gitignore -Encoding utf8 -Force
